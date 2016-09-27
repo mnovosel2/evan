@@ -1,0 +1,87 @@
+.p-transactions {
+    height: 100%;
+    min-height: 100vh;
+    .table {
+        background: white;
+    }
+}
+
+.transactions {
+    &__inner {
+        background: white;
+        margin-bottom: 40px;
+    }
+    .controls {
+        @include clearfix;
+        padding: 30px 0;
+        @include breakpoint(lg) {
+            padding: 30px 15px;
+        }
+    }
+    .controls__inner {
+        float: right;
+        .btn--previous {
+            margin-right: 15px;
+        }
+    }
+    &-empty {
+        svg {
+            width: 70px;
+            height: 60px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .empty {
+            display: inline-block;
+            margin-left: 30px;
+            vertical-align: middle;
+            @include breakpoint(sm) {
+                display: block;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+        p {
+            display: block;
+            color: $c-cool-grey;
+        }
+    }
+    .footer-wrap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        @include breakpoint(xlg) {
+            position: relative;
+        }
+        @include breakpoint(735px, max-height) {
+            position: relative;
+        }
+    }
+    .table {
+        @include breakpoint(lg) {
+            padding: 0 30px;
+        }
+        td {
+            color: $c-cool-grey;
+            span {
+                display: inline-block;
+                word-wrap: break-word;
+                max-width: 230px;
+                @include breakpoint(md) {
+                    max-width: 185px;
+                }
+                @include breakpoint(xs) {
+                    max-width: 130px;
+                }
+            }
+            &:first-of-type {
+                color: $c-night-blue;
+            }
+        }
+    }
+}
+.forgot-pwd__return{
+    float: right;
+}

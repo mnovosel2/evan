@@ -1,0 +1,333 @@
+.form-input-template {
+    @extend .osans-book;
+    @include font-size-map($p-font-size);
+    border: 1px solid $c-cool-grey-two;
+    border-radius: 3px;
+    height: 42px;
+    background: white;
+    padding: 10px 15px;
+    color: $c-night-blue;
+}
+
+.form-label {
+    @extend .osans-book;
+    color: $c-cool-grey;
+    display: block;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.info-anchor {
+    @extend .osans-book;
+    background: #959ca8;
+    padding: 0;
+    border-radius: 100%;
+    color: white;
+    text-decoration: none;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: 700;
+    top: 2px;
+    display: inline-block;
+    line-height: 1.5;
+    margin-left: 5px;
+    @include breakpoint(xs) {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.form-item {
+    overflow: hidden;
+    margin-bottom: 20px;
+    &--radio {
+        label {
+            cursor: pointer;
+        }
+        @include breakpoint(xs) {
+            margin-bottom: 15px;
+        }
+    }
+    &--checkbox, &--radio {
+        @extend .osans-book;
+        @include font-size-map($p-font-size);
+        @include clearfix;
+        color: $c-night-blue;
+        line-height: 1.6;
+        position: relative;
+        -webkit-appearance: none;
+    }
+    &--checkbox {
+        @include breakpoint(xs) {
+            margin-bottom: 0;
+        }
+    }
+    .form-input {
+        @extend .form-input-template;
+    }
+    /* Base for label styling */
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: absolute;
+        left: -9999px;
+    }
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+    }
+    /* checkbox aspect */
+    [type="checkbox"]:not(:checked) + label:before,
+    [type="checkbox"]:checked + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 24px;
+        height: 24px;
+        border: solid 1px $c-cool-grey;
+        background: $c-white-two;
+        border-radius: 3px;
+        padding: 3px 5px;
+    }
+    /* checked mark aspect */
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after {
+        content: url("../img/ic-checkmark.svg");
+        position: absolute;
+        top: 8px;
+        left: 4px;
+        font-size: 15px;
+        line-height: 0.8;
+        fill: $c-blush;
+        color: $c-blush;
+        transition: all .2s;
+    }
+    /* checked mark aspect changes */
+    [type="checkbox"]:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+    }
+    [type="checkbox"]:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
+    /* disabled checkbox */
+    [type="checkbox"]:disabled:not(:checked) + label:before,
+    [type="checkbox"]:disabled:checked + label:before {
+        box-shadow: none;
+        border-color: #bbb;
+        background-color: #ddd;
+    }
+    [type="checkbox"]:disabled:checked + label:after {
+        color: #999;
+    }
+    [type="checkbox"]:disabled + label {
+        color: #aaa;
+    }
+    .checkbox-label {
+        @include font-size-map($p-font-size);
+        padding-left: 15px;
+        line-height: 1.7;
+        position: relative;
+        display: inline-block;
+        top: 2px;
+        color: $c-night-blue;
+        word-wrap: break-word;
+        max-width: 350px;
+    }
+    &--radio {
+        -webkit-appearance: none;
+        .checkbox-label {
+            top: 0;
+        }
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    input[type="radio"] + label div {
+        padding: 4px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: -1px 0 0 0;
+        vertical-align: top;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: white;
+        border: solid 1px $c-cool-grey;
+    }
+
+    input[type="radio"]:checked + label span.radio-inner,
+    input[type="radio"].radio-item--active + label span.radio-inner {
+        background-color: $c-blush;
+        display: inline-block;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+
+    input[type="radio"]:disabled:checked + label span.radio-inner,
+    input[type="radio"]:disabled.radio-item--active + label span.radio-inner {
+        background-color: #cacaca;
+        display: inline-block;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+
+    input[type="radio"] + label span,
+    input[type="radio"]:checked + label span.radio-inner,
+    input[type="radio"].radio-item--active + label span.radio-inner {
+        transition: background-color 0.3s ease-out, border 0.3s ease-out;
+    }
+    .radio-inner {
+        position: relative;
+        top: -1px;
+    }
+}
+
+.form-item.form-error {
+
+    .form-input {
+        border: solid 1px $c-dark-sky-blue;
+        background-color: #e9f3ff;
+        margin-bottom: 6px;
+    }
+    .form-error__message {
+        @extend .osans-regular;
+        @include font-size-map($label-font-size);
+        color: $c-dark-sky-blue;
+        display: block;
+    }
+}
+
+.form-inline {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    &__submit {
+        width: 25%;
+        float: right;
+        height: 42px;
+        border-radius: 0 4px 4px 0;
+        transition: all 0.3s ease-out;
+        @include breakpoint(sm) {
+            width: 100%;
+            float: right;
+        }
+        &:hover {
+            background: $c-night-blue;
+        }
+    }
+}
+
+.form-inline .form-inline__input {
+    @extend .form-input-template;
+    width: 75%;
+    float: left;
+    border-radius: 4px 0 0 4px;
+    @include breakpoint(sm) {
+        width: 100%;
+        float: none;
+    }
+    @include placeholder {
+        @include font-size-map($a-font-size);
+        color: $c-night-blue;
+        opacity: 0.1;
+    }
+}
+
+input, a {
+    -webkit-appearance: none;
+}
+input[type="text"]:disabled, input[type="password"]:disabled {
+    border: 1px solid #d8d8d8;
+    color: #929292;
+    background-color: #f9f9f9;
+}
+.select {
+    width: 180px;
+    margin-bottom: 20px;
+    float: right;
+    select {
+        @extend .form-input-template;
+        display: block;
+        width: 100%;
+        -moz-appearance: window;
+        -webkit-appearance: none;
+    }
+    select:disabled {
+        border: 1px solid #d8d8d8;
+        color: #929292;
+        background-color: #f9f9f9;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    &__inner {
+        position: relative;
+        &:after {
+            content: '▶';
+            color: $c-dark-grey-blue;
+            transform: rotate(90deg);
+            right: 20px;
+            top: 50%;
+            margin-top: -5px;
+            padding: 0 0 2px;
+            position: absolute;
+            pointer-events: none;
+        }
+    }
+}
+
+.form-additional {
+    position: absolute;
+    top: 105%;
+    left: -35%;
+    background: white;
+    z-index: 10;
+    width: 365px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 20px;
+    @include breakpoint(sm) {
+        left: 0;
+        width: 100%;
+        top: 130%;
+    }
+    @include breakpoint(xs) {
+        width: 150%;
+        left: -25%;
+        top: 130%;
+    }
+    p.subparagraph {
+        text-align: left;
+    }
+    p.subparagraph {
+        font-size: 1.3rem;
+    }
+    a.anchor {
+        text-align: right;
+    }
+    &__title {
+        margin-bottom: 20px;
+        clear: both;
+    }
+    &__text {
+        clear: both;
+    }
+    &__anchor {
+        float: right;
+        margin-top: 10px;
+    }
+}
+
+.select--disabled {
+    .select__inner:after {
+        display: none;
+    }
+}

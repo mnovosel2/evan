@@ -1,0 +1,14 @@
+{
+  "name": "tnll__login",
+  "version": "1.0.0",
+  "description": "Analytics microservice",
+  "main": "./app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Novoselec",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.14.1"
+  }
+}

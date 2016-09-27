@@ -1,0 +1,6 @@
+// center vertically and/or horizontally an absolute positioned element
+@mixin center($columns, $context) {
+    width: span($columns of $context);
+    margin: 0 auto;
+    float: none;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "degordian",
+  "version": "0.1.0",
+  "authors": [],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "gsap": "^1.18.2"
+  },
+  "dependencies": {
+    "susy": "~2.2.6",
+    "es6-promise": "^3.2.2"
+  }
+}

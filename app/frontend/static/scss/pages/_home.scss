@@ -1,0 +1,28 @@
+.p-home {
+    min-height: 100vh;
+    height: auto;
+    .card-icon {
+        display: inline-block;
+        padding-right: 10px;
+        img {
+            height: 22px;
+            width: auto;
+            vertical-align: middle;
+        }
+    }
+}
+
+.accept-invitation-dialog{
+    text-align: center;
+    padding: 50px 50px 150px 50px;
+    svg{
+        height: 40px;
+    }
+    h2{
+        margin-top: 30px;
+    }
+    p{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}

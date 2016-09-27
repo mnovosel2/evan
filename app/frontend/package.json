@@ -1,0 +1,52 @@
+{
+  "name": "evan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development ./node_modules/.bin/hjs-dev-server",
+    "build": "NODE_ENV=production webpack --display-error-details",
+    "lint": "eslint --fix './reducers/*.js'"
+  },
+  "keywords": [],
+  "author": "Mario Novoselec",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "hjs-webpack": "^8.2.0",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.3.6",
+    "axios": "^0.12.0",
+    "babel-plugin-transform-es2015-classes": "^6.14.0",
+    "babel-plugin-transform-proto-to-assign": "^6.9.0",
+    "is_js": "^0.8.0",
+    "json-loader": "^0.5.4",
+    "moment": "^2.14.1",
+    "react": "^15.1.0",
+    "react-ab-test": "^1.6.0",
+    "react-dom": "^15.1.0",
+    "react-dropzone": "^3.5.3",
+    "react-redux": "^4.4.5",
+    "react-remodal": "^1.0.3",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-form": "^5.3.1",
+    "redux-promise": "^0.5.3"
+  }
+}

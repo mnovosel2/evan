@@ -1,0 +1,274 @@
+.white-popup {
+    @include center(6, 12);
+    background: white;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    top: 5vh;
+    margin-bottom: 40px;
+    @include breakpoint(xlg) {
+        @include center(7, 12);
+        margin-bottom: 40px;
+    }
+    @include breakpoint(lg) {
+        @include center(8, 12);
+        margin-bottom: 40px;
+    }
+    @include breakpoint(md) {
+        @include center(9, 12);
+        margin-bottom: 40px;
+    }
+    @include breakpoint(xs) {
+        @include center(11, 12);
+        margin-bottom: 40px;
+    }
+    &__list {
+        @include clearfix;
+        @include center(5, 6);
+        padding: 40px 50px;
+        border: 1px solid $c-white;
+        @include breakpoint(xlg) {
+            @include center(6, 7);
+        }
+        @include breakpoint(lg) {
+            @include center(7, 8);
+        }
+        @include breakpoint(md) {
+            @include center(8, 9);
+            padding: 20px 30px;
+        }
+        @include breakpoint(sm) {
+            @include center(11, 11);
+        }
+    }
+    &__item {
+        @include clearfix;
+        float: none;
+        margin: 0 auto;
+        list-style: none;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid $c-white;
+        padding: 30px 0;
+        position: relative;
+        &:last-of-type {
+            border-bottom: none;
+        }
+        &:first-of-type {
+            padding-top: 0;
+        }
+    }
+    .form-item--radio {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        left: 0;
+        label {
+            top: 35px;
+            position: absolute;
+            left: 0;
+        }
+    }
+    &__heading {
+        max-width: 75%;
+        margin: 0 auto;
+        @include breakpoint(sm) {
+            max-width: 90%;
+        }
+        @include breakpoint(xs) {
+            max-width: 100%;
+        }
+    }
+    p {
+        max-width: 75%;
+        margin: 0 auto;
+        @include breakpoint(sm) {
+            max-width: 90%;
+        }
+        @include breakpoint(xs) {
+            max-width: 100%;
+        }
+    }
+    input[type="radio"] {
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        z-index: 5;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__details {
+        @include clearfix;
+        margin-left: 10%;
+        .element__profile {
+            @include breakpoint(sm) {
+                margin: 0 auto;
+                max-width: 100px;
+                height: 100px;
+            }
+            @include breakpoint(xs) {
+                max-width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    &__desc {
+        float: left;
+        text-align: left;
+        @include breakpoint(sm) {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        p {
+            color: $c-cool-grey-two;
+        }
+        h2, p {
+            word-wrap: break-word;
+            max-width: 450px;
+            @include breakpoint(lg) {
+                max-width: 330px;
+            }
+            @include breakpoint(sm) {
+                margin: 0 auto;
+                max-width: 250px;
+            }
+        }
+    }
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__subtitle {
+        margin-bottom: 30px;
+    }
+    .plan {
+        padding-top: 30px;
+        &__list {
+            margin-bottom: 15px;
+            @include breakpoint(sm) {
+                margin-bottom: 10px;
+            }
+        }
+        &__item {
+            @include font-size-map($p-font-size);
+            @extend .osans-book;
+            color: $c-night-blue;
+            margin-bottom: 15px;
+            @include breakpoint(sm) {
+                margin-bottom: 10px;
+            }
+            b {
+                color: $c-blush;
+            }
+        }
+        &__desc {
+            @extend .osans-medium;
+            margin-bottom: 33px;
+            @include breakpoint(sm) {
+                margin-bottom: 20px;
+            }
+        }
+        &__info {
+            @include font-size-map($a-smaller-font-size);
+            color: $c-cool-grey-two;
+            margin-bottom: 25px;
+            @include breakpoint(sm) {
+                margin-bottom: 15px;
+            }
+        }
+        &__controls {
+            .btn {
+                @include breakpoint(sm) {
+                    width: 100%;
+                }
+            }
+            .btn--secondary {
+                margin-right: 20px;
+                @include breakpoint(sm) {
+                    margin-bottom: 10px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.white-popup--single {
+    .popup-baby {
+        margin: 0 auto;
+        width: 300px;
+        padding: 30px 0;
+        input {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+            border: none;
+            background: transparent;
+            &:focus, &:active{
+                background: transparent;
+                border: none;
+            }
+        }
+        @include breakpoint(sm) {
+            padding: 15px 0;
+            width: 100%;
+        }
+        @include breakpoint(xs) {
+            padding: 10px 0;
+        }
+    }
+    .white-popup__desc {
+        float: left;
+        width: auto;
+        h2 {
+            word-wrap: break-word;
+        }
+        @include breakpoint(sm) {
+            width: 100%;
+            float: none;
+            margin-top: 15px;
+        }
+    }
+    .element__avatar {
+        width: 80px;
+        @include breakpoint(sm) {
+            margin: 0 auto;
+            float: none;
+        }
+    }
+    .white-popup__info {
+        .component-wrapper {
+            border-bottom: 1px solid $c-white;
+        }
+    }
+}
+
+.white-popup--activated {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-45%);
+    left: 0;
+    right: 0;
+    .element__avatar {
+        display: block;
+        float: none;
+        margin: 0 auto 25px;
+        width: 80px;
+    }
+    .white-popup__title {
+        @extend .osans-medium;
+        margin-bottom: 10px;
+    }
+    .white-popup__email {
+        @include font-size-map($a-smaller-font-size);
+        color: $c-cool-grey-two;
+    }
+    .plan__marketing {
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,44 @@
+.alert {
+    width: 100%;
+    position: relative;
+    &__inner {
+        padding: 8px 10px;
+        width: 100%;
+        text-align: center;
+        background: $c-dark-sky-blue;
+    }
+    &__options {
+        display: inline-block;
+        margin-left: 35px;
+        vertical-align: middle;
+    }
+}
+
+.alert .alert__text {
+    @extend .osans-medium;
+    @include font-size-map($p-font-size);
+    color: #fff;
+    margin-bottom: 0;
+    display: inline-block;
+    max-width: 670px;
+    vertical-align: middle;
+    span {
+        display: inline-block;
+        margin-bottom: 0;
+        padding-left: 30px;
+    }
+}
+
+.alert.alert--modal {
+    .alert__inner {
+        padding: 23px 32px 13px;
+        border-radius: 8px 8px 0 0;
+        @include breakpoint(sm) {
+            padding: 8px 20px;
+        }
+    }
+    .alert__text {
+        font-size: 12px;
+        text-align: left;
+    }
+}

@@ -1,0 +1,74 @@
+html{
+    @include font-size-map($root-font-size);
+}
+.osans-light{
+    font-family: 'Open Sans',sans-serif;
+    font-weight: normal;
+}
+.osans-book{
+    font-family: 'Open Sans',sans-serif;
+    font-weight: normal;
+    font-weight: 400;
+}
+.osans-regular{
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+}
+.osans-medium{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.typography, .react-remodal__wrap{
+    h1{
+        @extend .osans-light;
+        @include font-size-map($h1-font-size);
+        color:$c-night-blue;
+    }
+    h2{
+        @extend .osans-book;
+        @include font-size-map($h2-font-size);
+        color:$c-night-blue;
+
+    }
+    h3{
+        @extend .osans-light;
+        @include font-size-map($h3-font-size);
+        color:$c-night-blue;
+    }
+    label{
+        @extend .osans-regular;
+        @include font-size-map($label-font-size);
+        color:$c-cool-grey-two;
+    }
+    p{
+        @extend .osans-book;
+        @include font-size-map($p-font-size);
+        line-height: 1.6;
+        color:$c-night-blue;
+    }
+    p.subparagraph{
+        @extend .osans-regular;
+        @include font-size-map($p-font-size);
+        line-height: 1.5;
+        color:$c-cool-grey;
+        text-align: center;
+    }
+    .p-smaller{
+        @extend .osans-regular;
+        @include font-size-map($a-smaller-font-size);
+        line-height: 1.5;
+        color:$c-cool-grey;
+    }
+    .p-bold{
+        @extend .osans-medium;
+        @include font-size-map($h3-font-size);
+        line-height: 1.5;
+        color: black;
+    }
+    .subtle{
+        @extend .osans-regular;
+        @include font-size-map($label-font-size);
+        line-height: 1.5;
+        color:$c-cool-grey;
+    }
+}

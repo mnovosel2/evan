@@ -1,0 +1,19 @@
+{
+  "apps" : [
+    {
+      "name"      : "LOGIN",
+      "script"    : "./login/app/index.js"
+    },
+    {
+      "name"      : "REGISTER",
+      "script"    : "./registration/app/index.js"
+    }
+  ],
+  "deploy" : {
+    "dev" : {
+      "user" : "node",
+      "host" : "localhost:3020",
+      "post-deploy" : "pm2 startOrRestart ecosystem.jsonc --env dev"
+    }
+  }
+}

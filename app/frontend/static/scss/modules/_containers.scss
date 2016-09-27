@@ -1,0 +1,15 @@
+.container {
+    @include container(1170px);
+}
+.b-grey {
+    background: #F9F9F9
+}
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.component-wrapper{
+    &--inline{
+        display: inline-block;
+    }
+}

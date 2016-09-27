@@ -1,0 +1,67 @@
+.babies-list {
+    &__title {
+        margin: 60px auto 20px;
+        h2 {
+            display: inline-block;
+        }
+        a {
+            float: right;
+        }
+    }
+    &__item {
+        background: white;
+        @include breakpoint(lg) {
+            padding: 0;
+        }
+    }
+}
+
+.baby {
+    p {
+        clear: both;
+    }
+    &__source {
+        width: 120px;
+        height: 120px;
+    }
+    .trial {
+        clear: both;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        p, a {
+            font-size: 14px;
+        }
+        p {
+            padding-top: 10px;
+        }
+    }
+    .options {
+        &__desc {
+            padding-bottom: 15px;
+        }
+    }
+    .element__option {
+        float: left;
+        min-width: 165px;
+    }
+    p {
+        @include font-size-map($a-smaller-font-size);
+    }
+    .insights{
+        padding: 0;
+    }
+    .insights-info, .billing-info {
+        margin-bottom: 10px;
+    }
+    .insights__inner {
+        p {
+            margin-top: 10px;
+        }
+    }
+    .default-info {
+        &__inner {
+            @include clearfix;
+        }
+    }
+}

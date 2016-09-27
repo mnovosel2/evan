@@ -1,0 +1,204 @@
+.btn {
+    @extend .osans-medium;
+    @include letter-spacing(800px);
+    padding: 12px 20px;
+    display: inline-block;
+    color: #f2f2f2;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    border-radius: 4px;
+    width: auto;
+    font-size: 12px;
+    &--inline{
+        border-radius: 0 4px 4px 0;
+    }
+    svg {
+        width: 12px;
+        height: 12px;
+        fill: #f2f2f2;
+        position: absolute;
+    }
+    &-close {
+        @include clearfix;
+        svg {
+            width: 20px;
+            height: 20px;
+            top: 10px;
+            position: absolute;
+            right: 15px;
+            fill: $c-blush;
+        }
+    }
+    &--primary {
+        background: $c-blush;
+        text-align: center;
+        border: 1px solid $c-blush;
+        &:before {
+            @include breakpoint(lg, min-width) {
+                background: #e54c4c;
+            }
+        }
+        &:focus {
+            @include breakpoint(lg, min-width) {
+                background: #ec7b7b;
+            }
+        }
+        &:focus:before {
+            @include breakpoint(lg, min-width) {
+                background: #ec7b7b;
+            }
+        }
+    }
+    &--secondary {
+        background: $c-dark-grey-blue;
+        text-align: center;
+        border: 1px solid $c-dark-grey-blue;
+        margin-bottom: 0;
+        &:before {
+            @include breakpoint(lg, min-width) {
+                background: $c-night-blue;
+            }
+        }
+        &:focus {
+            @include breakpoint(lg, min-width) {
+                background: $c-dark-grey-blue;
+                border: 1px solid $c-night-blue;
+            }
+        }
+        &:focus:before {
+            @include breakpoint(lg, min-width) {
+                background: $c-dark-grey-blue;
+                border: 1px solid $c-night-blue;
+            }
+        }
+    }
+    &--previous {
+        background: $c-dark-grey-blue;
+        text-align: center;
+        border: 1px solid $c-dark-grey-blue;
+        span {
+            padding-left: 15px;
+        }
+        svg {
+            transform: scaleX(-1) translateY(-50%);
+            left: 14px;
+            top: 50%;
+        }
+        &:before {
+            background: $c-night-blue;
+        }
+        &:focus {
+            background: $c-dark-grey-blue;
+            border: 1px solid $c-night-blue;
+        }
+        &:focus:before {
+            background: $c-dark-grey-blue;
+            border: 1px solid $c-night-blue;
+        }
+    }
+    &--next {
+        background: $c-dark-grey-blue;
+        text-align: center;
+        border: 1px solid $c-dark-grey-blue;
+        span {
+            padding-right: 15px;
+        }
+        svg {
+            transform: scaleX(1) translateY(-50%);
+            right: 14px;
+            top: 50%;
+        }
+        &:before {
+            background: $c-night-blue;
+        }
+        &:focus {
+            background: $c-dark-grey-blue;
+            border: 1px solid $c-night-blue;
+        }
+        &:focus:before {
+            background: $c-dark-grey-blue;
+            border: 1px solid $c-night-blue;
+        }
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    &:hover, &:focus, &:active {
+        @include breakpoint(lg, min-width) {
+            color: white;
+        }
+    }
+    &:hover:before, &:focus:before, &:active:before {
+        @include breakpoint(lg, min-width) {
+            transform: scaleX(1);
+            border-radius: 4px;
+        }
+    }
+}
+
+.btn--secondary[disabled], .btn--previous[disabled], .btn--next[disabled] {
+    background: lighten($c-dark-grey-blue, 10%);
+    border: 1px solid lighten($c-dark-grey-blue, 10%);
+    opacity: 0.8;
+    &:before {
+        @include breakpoint(lg, min-width) {
+            background: lighten($c-dark-grey-blue, 10%);
+        }
+    }
+    &:focus {
+        @include breakpoint(lg, min-width) {
+            background: lighten($c-dark-grey-blue, 10%);
+            border: 1px solid lighten($c-dark-grey-blue, 10%);
+        }
+    }
+    &:focus:before {
+        @include breakpoint(lg, min-width) {
+            background: lighten($c-dark-grey-blue, 10%);
+            border: 1px solid lighten($c-dark-grey-blue, 10%);
+        }
+    }
+}
+
+.btn--primary[disabled] {
+    background: lighten($c-blush, 10%);
+    border: 1px solid lighten($c-blush, 10%);
+    opacity: 0.8;
+    &:before {
+        @include breakpoint(lg, min-width) {
+            background: lighten($c-blush, 10%);
+        }
+    }
+    &:focus {
+        @include breakpoint(lg, min-width) {
+            background: lighten($c-blush, 10%);
+            border: 1px solid lighten($c-blush, 10%);
+        }
+    }
+    &:focus:before {
+        @include breakpoint(lg, min-width) {
+            background: lighten($c-blush, 10%);
+            border: 1px solid lighten($c-blush, 10%);
+        }
+    }
+}

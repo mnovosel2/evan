@@ -1,0 +1,53 @@
+table {
+    width: 100%;
+    thead {
+        border-bottom: 2px solid rgba(181, 184, 192, .8);
+        text-align: left;
+    }
+    th {
+        @extend .osans-regular;
+        @include font-size-map($th-font-size);
+        color: $c-cool-grey;
+        padding:0 15px 18px;
+        &:first-child{
+            padding: 0 0 18px;
+            @include breakpoint(lg){
+                padding:0 15px 18px;
+            }
+        }
+    }
+    td {
+        @extend .osans-book;
+        @include font-size-map($td-font-size);
+        padding: 20px 15px;
+        border-bottom: 1px solid $c-white;
+        color: $c-night-blue;
+        &:first-child{
+            padding: 20px 0;
+            @include breakpoint(md){
+                padding: 20px 15px;
+            }
+        }
+    }
+    @media screen and (max-width: 780px) {
+        thead {
+            display: none;
+        }
+        tr {
+            margin-bottom: 10px;
+            display: block;
+        }
+        td {
+            display: block;
+            text-align: right;
+        }
+        td:last-child {
+            border-bottom: 0;
+        }
+        td:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: 700;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "airbnb",
+  "quotes": 0,
+  "jsx-indent":0,
+  "rules": {
+    "indent":[0,"tab"],
+    "react/jsx-indent":[0,"tab"],
+    "react/jsx-indent-props":[0,"tab"],
+    "react/jsx-space-before-closing":0,
+    "no-multi-spaces":0,
+    "arrow-body-style":0,
+    "max-len":[1,150],
+    "react/jsx-closing-bracket-location": [1, {
+      "nonEmpty": false
+    }]
+  },
+  "globals": {
+    "Stripe": true,
+  }
+}

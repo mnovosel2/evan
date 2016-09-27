@@ -1,0 +1,51 @@
+.anchor-template {
+    @extend .osans-regular;
+    @include font-size-map($a-font-size);
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.anchor {
+    @extend .anchor-template;
+    color: $c-blush;
+    transition: all .3s ease-out;
+    &:hover {
+        @include breakpoint(md, min-width) {
+            text-decoration: underline;
+            color: darken($c-blush, 20%);
+        }
+    }
+}
+
+a.anchor.smaller {
+    @extend .anchor-template;
+    @include font-size-map($a-smaller-font-size);
+    color: $c-blush;
+}
+
+a.disclosure {
+    svg {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        fill: $c-blush;
+        margin-bottom: 0;
+        margin-left: 9px;
+    }
+    &--down {
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+    &--left {
+        svg {
+            transform: scaleX(-1);
+            margin-right: 9px;
+            margin-left: 0;
+        }
+    }
+}
+
+a[disabled], a[disabled]:hover {
+    pointer-events: none;
+}

@@ -1,0 +1,184 @@
+.p-login {
+    @include clearfix;
+    background: $c-night-blue;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    @include breakpoint(md) {
+        overflow: auto;
+        padding-bottom: 30px;
+    }
+    .container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        margin: 0 auto;
+        width: span(12 of 12);
+        @include breakpoint(xlg) {
+            position: relative;
+            top: 0;
+            transform: translateY(0);
+            padding: 40px 0;
+        }
+        @include breakpoint(sm) {
+            padding: 60px 0 35px;
+        }
+    }
+    &__inner {
+        @include span(5 of 12);
+        padding: 60px span(0.75 of 12) 60px;
+        float: none;
+        margin: auto;
+        background: white;
+        border-radius: 8px;
+        position: relative;
+        @include breakpoint(lg) {
+            @include span(5.5 of 12);
+            float: none;
+            margin: auto;
+        }
+        @include breakpoint(md) {
+            @include span(6 of 12);
+            float: none;
+            margin: auto;
+        }
+        @include breakpoint(sm) {
+            @include span(8.5 of 12);
+            padding: 45px span(0.75 of 12) 45px;
+            float: none;
+            margin: auto;
+        }
+        @include breakpoint(xs) {
+            @include span(10.5 of 12);
+            float: none;
+            margin: auto;
+        }
+        .subparagraph {
+            padding: 0 40px;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            @include breakpoint(xs) {
+                padding: 0 20px;
+            }
+        }
+        &.invitation-promo{
+            border-radius: 8px;
+        }
+    }
+    .alert--modal {
+        position: absolute;
+        left: 0;
+        top: -20px;
+        .alert__text {
+            text-align: center;
+        }
+    }
+    &__bottom {
+        @include center(5, 12);
+        padding: 30px 0;
+        background: #233149;
+        border-radius: 0 0 8px 8px;
+        @include breakpoint(lg) {
+            @include center(5.5, 12);
+        }
+        @include breakpoint(md) {
+            @include center(6, 12);
+        }
+        @include breakpoint(sm) {
+            @include center(8.5, 12);
+            padding: 30px 0 45px;
+        }
+        @include breakpoint(xs) {
+            @include center(10.5, 12);
+        }
+        a {
+            @include font-size-map($h3-font-size);
+            display: block;
+            margin-top: 5px;
+            text-align: center;
+        }
+    }
+    .form-label {
+        margin-bottom: 0;
+    }
+    &__logo {
+        text-align: center;
+        svg {
+            width: 120px;
+            height: 42px;
+        }
+    }
+    &__forgot {
+        text-align: center;
+        width: 100%;
+        padding-top: 30px;
+    }
+    .btn {
+        @include font-size-map($label-font-size);
+        width: 100%;
+    }
+    &__pattern {
+        background: url("../img/shapes-footer.svg");
+        width: 100%;
+        height: 216px;
+        position: absolute;
+        bottom: -30px;
+        opacity: .4;
+    }
+    .invitation-promo {
+        text-align: center;
+        position: relative;
+        padding-bottom: 140px;
+        h3, p {
+            color: $c-cool-grey;
+        }
+        &__heading{
+            margin-bottom: 10px;
+        }
+        .p-login__logo{
+            margin-bottom: 30px;
+        }
+        &__title{
+            margin-bottom: 40px;
+        }
+        &__download{
+            padding: 0;
+            margin-top: 5px;
+        }
+        .p-login__forgot{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto 40px;
+        }
+        .store{
+            @include clearfix;
+            display: block;
+            text-align: center;
+            &__icon{
+                height: 40px;
+                width: auto;
+                display: inline-block;
+                @include breakpoint(sm){
+                    display: block;
+                }
+                &--mright{
+                    margin-right: 15px;
+                    @include breakpoint(sm){
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+            &__source{
+                max-height: 100%;
+            }
+        }
+    }
+}

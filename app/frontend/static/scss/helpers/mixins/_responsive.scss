@@ -1,0 +1,82 @@
+@mixin breakpoint($class: custom, $maxmin: max-width, $size: 0) {
+    @if $class == xs {
+        @media ($maxmin: $responsive-screen-xs) {
+            @content;
+        }
+    } @else if $class == sm {
+        @media ($maxmin: $responsive-screen-sm) {
+            @content;
+        }
+    } @else if $class == md {
+        @media ($maxmin: $responsive-screen-md) {
+            @content;
+        }
+    } @else if $class == lg {
+        @media ($maxmin: $responsive-screen-lg) {
+            @content;
+        }
+    }  @else if $class == xlg {
+        @media ($maxmin: $responsive-screen-xlg) {
+            @content;
+        }
+    } @else {
+        @media ($maxmin: $class) {
+            @content;
+        }
+    }
+}
+/**
+  *** NANIT FOOTER ELEMENTS
+**/
+$grid-columns:               12 !default;
+$grid-gutter-width:          1.875rem !default; // 30px
+$grid-breakpoints: (
+    // Extra small screen / phone
+        xs: 0,
+    // Small screen / phone
+        sm: 544px,
+    // Medium screen / tablet
+        md: 768px,
+    // Large screen / desktop
+        lg: 1024px,
+    // Extra large screen / wide desktop
+        xl: 1200px,
+        xxl: 1440px,
+        xxxl: 1900px
+) !default;
+
+$enable-flex: true;
+$enable-grid-classes: true;
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+    @if $enable-flex {
+        display: flex;
+        flex-wrap: wrap;
+    } @else {
+        @include clearfix();
+    }
+    margin-left:  ($gutter / -2);
+    margin-right: ($gutter / -2);
+}
+@mixin make-col-span($size, $columns: $grid-columns) {
+    @if $enable-flex {
+        flex: 0 0 percentage($size / $columns);
+    } @else {
+        width: percentage($size / $columns);
+    }
+}
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

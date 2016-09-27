@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log
+.idea
+_gulp/node_modules/
+bower_components/
+dist/
+.aws-credentials

@@ -1,0 +1,157 @@
+.form {
+    @include clearfix;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    @include breakpoint(md) {
+        height: auto;
+        overflow: auto;
+    }
+    &__row {
+        @include clearfix;
+    }
+    &__content {
+        position: relative;
+        padding: 40px 0;
+        top: 100px;
+        @include breakpoint(xlg) {
+            top: 0;
+            padding: 60px 0;
+            position: relative;
+        }
+        @include breakpoint(lg) {
+            transform: translateY(0);
+            position: relative;
+            top: 40px;
+            padding: 60px 0;
+        }
+        @include breakpoint(md) {
+            padding: 40px 0;
+        }
+    }
+    &__wrapper {
+        @include span(8.5 of 12);
+        background: #fff;
+        padding: 60px 30px 30px;
+        float: none;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 8px;
+        @include breakpoint(md) {
+            @include span(10 of 12);
+            float: none;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+        @include breakpoint(xs) {
+            @include span(11 of 12);
+            float: none;
+            margin: 0 auto;
+            padding: 30px 20px 30px;
+        }
+    }
+    &__inner {
+        overflow: hidden;
+    }
+    &__details {
+        @include span(5 of 8.5);
+        @include breakpoint(sm) {
+            @include span(10 of 10);
+        }
+    }
+    &__notice {
+        margin: 0 0 25px;
+    }
+    &__notice p.subparagraph {
+        @include font-size-map($label-font-size);
+    }
+    &__heading {
+        @include span(8.5 of 12);
+        float: none;
+        margin: 0 auto 20px;
+        overflow: hidden;
+        padding: 0 30px;
+        @include breakpoint(md) {
+            @include span(10 of 12);
+            float: none;
+            margin: 0 auto 20px;
+        }
+        @include breakpoint(sm) {
+            padding: 0;
+        }
+    }
+    &__controls {
+        overflow: hidden;
+        .btn {
+            margin-left: 20px;
+        }
+        a, input {
+            width: auto;
+            float: right;
+            @include breakpoint(xs) {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__action {
+        float: right;
+        margin-top: 3px;
+    }
+    &__title {
+        float: left;
+        @include breakpoint(sm) {
+            margin-bottom: 5px;
+        }
+    }
+    .form__left {
+        @include span(4.2 of 8.5);
+        @include breakpoint(sm) {
+            width: 100%;
+        }
+        @include clearfix;
+        margin-bottom: 20px;
+    }
+    .form__right {
+        @include span(4.2 of 8.5 last);
+        @include clearfix;
+        @include breakpoint(sm) {
+            width: 100%;
+        }
+        &--left {
+            @include span(4.2 of 8.5);
+            @include clearfix;
+        }
+    }
+    &__status {
+        text-align: right;
+        margin-bottom: 10px;
+        p {
+            color: $c-cool-grey;
+        }
+    }
+    &__action, &__title {
+        @include breakpoint(sm) {
+            float: none;
+        }
+    }
+    &__block {
+        width: 100%;
+        height: 220px;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        @extend .osans-regular;
+        @include font-size-map($p-font-size);
+        border: 1px solid $c-cool-grey-two;
+        height: 100%;
+        width: 60%;
+        padding: 40px 30px;
+        resize: none;
+    }
+    &-input.form-input--inline{
+        border-radius: 3px 0 0 3px;
+    }
+}

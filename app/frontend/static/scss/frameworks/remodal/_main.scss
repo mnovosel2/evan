@@ -1,0 +1,119 @@
+.react-remodal__wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  overflow: auto;
+  text-align: center;
+  padding: 1em 1em 0;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+  -webkit-perspective: 1400px;
+          perspective: 1400px;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.react-remodal__wrap:after {
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+  margin-left: -.05em;
+  content: '';
+}
+
+.react-remodal__wrap--is-open {
+  visibility: visible;
+}
+
+.react-remodal__dialog {
+  position: relative;
+  outline: 0;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1em;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  background: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+@media only screen and (min-width: 641px) {
+  .react-remodal__dialog {
+    max-width: 700px;
+  }
+}
+
+.react-remodal__dialog--enter {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 0;
+}
+
+.react-remodal__dialog--enter-active {
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+  transition: opacity 300ms ease-in, -webkit-transform 300ms ease-in;
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+  transition: opacity 300ms ease-in, transform 300ms ease-in, -webkit-transform 300ms ease-in;
+}
+
+.react-remodal__dialog--leave {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.react-remodal__dialog--leave-active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  opacity: 0;
+  transition: opacity 300ms ease-in, -webkit-transform 300ms ease-in;
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+  transition: opacity 300ms ease-in, transform 300ms ease-in, -webkit-transform 300ms ease-in;
+}
+
+.react-remodal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, .65);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.react-remodal__overlay--enter {
+  opacity: 0;
+}
+
+.react-remodal__overlay--enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.react-remodal__overlay--leave {
+  opacity: 1;
+}
+
+.react-remodal__overlay--leave-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}

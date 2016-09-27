@@ -1,0 +1,103 @@
+.sticky-footer {
+    padding-bottom: 250px;
+    @include breakpoint(lg) {
+        padding-bottom: 450px;
+    }
+}
+.footer-wrap {
+    @include make-row();
+    background-color: $footerColor;
+    margin-top: -250px;
+    height: 250px;
+    position: relative;
+    @include breakpoint(lg) {
+        margin-left: 0;
+        margin-right: 0;
+        height: 450px;
+        margin-top: -450px;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        background-size: 100%;
+        opacity: 0.6;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        @include breakpoint(md) {
+            background-position: center;
+            background-size: 150%;
+        }
+    }
+    @include media-breakpoint-up (sm) {
+        font-size: 30px;
+    }
+
+    @include media-breakpoint-up (md) {
+        font-size: 36px;
+        padding: 50px 70px;
+        background-position: center 70px;
+    }
+
+    @include media-breakpoint-up (lg) {
+        font-size: 14px;
+        padding: 90px 50px 50px;
+    }
+
+    @include media-breakpoint-up (xl) {
+        padding: 55px 40px 45px;
+        background-position: center 246px;
+    }
+
+    @include media-breakpoint-up (xxl) {
+        padding: 55px 40px 45px;
+        background-position: center 216px;
+    }
+
+    @include media-breakpoint-up (xxxl) {
+        background-position: center 180px;
+    }
+}
+
+#footer {
+    @include make-row();
+    color: white;
+    font-weight: 400;
+    padding: 50px 30px 10px;
+    font-size: 22px;
+    max-width: 1170px;
+    margin: 0 auto;
+    z-index: 5;
+    .logo {
+        display: none;
+
+        @include media-breakpoint-up (lg) {
+            display: inline-block;
+            //@include make-col();
+            @include make-col-span(3);
+
+            img {
+                width: 164px;
+                height: 42px;
+            }
+        }
+
+    }
+
+
+    .copyright {
+        @include media-breakpoint-up (lg) {
+            font-size: 12px;
+        }
+        span {
+            @extend .osans-regular;
+            @include font-size-map($footer-copy-font-size);
+            @include media-breakpoint-up (lg) {
+                @include make-col-span(6);
+                text-align: left;
+            }
+        }
+    }
+}
